@@ -116,3 +116,12 @@ const checkpointPositions = [
 const checkpoints = checkpointPositions.map(
   checkpoint => new CheckPoint(checkpoint.x, checkpoint.y)
 );
+// Animation function
+const animate = () => {
+  requestAnimationFrame(animate);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  platforms.forEach((platform) => {
+    platform.draw();
+  });
+ 
