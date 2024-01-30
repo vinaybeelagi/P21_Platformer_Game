@@ -28,6 +28,7 @@ class Player {
   }
   
   // Method to update the player's position and handle collisions
+
   update() {
     this.draw();
     this.position.x += this.velocity.x;
@@ -48,7 +49,7 @@ class Player {
     }
   }
 }
-// Define the Platform class
+
 class Platform {
   constructor(x, y) {
     this.position = {
@@ -102,7 +103,6 @@ const platformPositions = [
   { x: 4700, y: 150 }
 ];
 
-// Create instances of the Platform class based on positions
 const platforms = platformPositions.map(
   (platform) => new Platform(platform.x, platform.y)
 );
@@ -116,7 +116,7 @@ const checkpointPositions = [
 const checkpoints = checkpointPositions.map(
   checkpoint => new CheckPoint(checkpoint.x, checkpoint.y)
 );
-// Animation function
+
 const animate = () => {
   requestAnimationFrame(animate);
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -124,7 +124,7 @@ const animate = () => {
   platforms.forEach((platform) => {
     platform.draw();
   });
- // Check for collision with checkpoints
+
   checkpoints.forEach(checkpoint => {
     checkpoint.draw();
   });
@@ -213,7 +213,6 @@ const animate = () => {
 }
 
 
-// Object to track pressed keys
 const keys = {
   rightKey: {
     pressed: false
@@ -251,7 +250,7 @@ const movePlayer = (key, xVelocity, isPressed) => {
       player.velocity.x += xVelocity;
   }
 }
-// Function to start the game
+
 const startGame = () => {
   canvas.style.display = "block";
   startScreen.style.display = "none";
